@@ -14,7 +14,9 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
 Compiling package ieee.numeric_std
+Compiling package ieee.math_real
 Compiling architecture behavioral of entity xil_defaultlib.clk_divider [\clk_divider(simulation_mode=tru...]
+Compiling architecture behavioural of entity xil_defaultlib.debouncer [debouncer_default]
 Compiling architecture behavioral of entity xil_defaultlib.contador1 [contador1_default]
 Compiling architecture behavioral of entity xil_defaultlib.contador2 [contador2_default]
 Compiling architecture behavioral of entity xil_defaultlib.seven_decoder [seven_decoder_default]

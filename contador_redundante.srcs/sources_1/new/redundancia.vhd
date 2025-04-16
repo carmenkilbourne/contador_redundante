@@ -40,6 +40,8 @@ architecture Behavioral of redundancia is
     signal clk_1hz : STD_LOGIC;
     signal reset_n : STD_LOGIC;
     signal count_value : STD_LOGIC_VECTOR (7 downto 0);
+    signal debounced_reset : STD_LOGIC;  -- Debounced switch signal
+
 
     component clk_divider
         Generic ( SIMULATION_MODE : boolean := false );
@@ -71,9 +73,23 @@ architecture Behavioral of redundancia is
                seg : out STD_LOGIC_VECTOR (6 downto 0)
         );
     end component;    
+    
+    component debouncer is
+    generic(
+        g_timeout          : integer   := 5;        -- Time in ms
+        g_clock_freq_KHZ   : integer   := 100_000   -- Frequency in KHz of the system 
+    );   
+    port (  
+        rst_n       : in    std_logic; -- asynchronous reset, low-active
+        clk         : in    std_logic; -- system clk
+        ena         : in    std_logic; -- enable must be on 1 to work (kind of synchronous reset)
+        sig_in      : in    std_logic; -- signal to debounce
+        debounced   : out   std_logic  -- 1 pulse flag output when the timeout has occurred
+    ); 
+    end component;
 begin
     -- Reset invertido (de otra forma, esta activo cuando NO está pulsado)
-    reset_n <= not RESET;
+    reset_n <= not debounced_reset;
 
     -- Divisor de reloj
     DIV: clk_divider 
@@ -83,13 +99,24 @@ begin
             reset => reset_n,
             clk_out => clk_1hz
         );
-
+    DEBOUNCERR: debouncer
+        generic map (
+            g_timeout => 5,
+            g_clock_freq_KHZ => 100_000
+        )
+        port map (
+            rst_n =>'1',
+            clk => CLK100MHZ,
+            ena => '1',  
+            sig_in => RESET,
+            debounced => debounced_reset
+        );
     U1: contador1 port map (clk => clk_1hz, reset => reset_n, enable => enable1, count => count1);
     U2: contador2 port map (clk => clk_1hz, reset => reset_n, enable => enable2, count => count2);
-
+    
     process(SW, count1, count2)
     begin
-        if SW = "1" then
+        if SW(0) = '1' then
             enable1 <= '0';
             enable2 <= '1';
             count_value <= count2;

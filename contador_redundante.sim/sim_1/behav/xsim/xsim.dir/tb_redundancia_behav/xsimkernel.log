@@ -1,7 +1,7 @@
-Running: xsim.dir/tb_redundancia_behav/xsimk.exe -simmode gui -wdb tb_redundancia_behav.wdb -simrunnum 0 -socket 52900
+Running: xsim.dir/tb_redundancia_behav/xsimk.exe -simmode gui -wdb tb_redundancia_behav.wdb -simrunnum 0 -socket 55477
 Design successfully loaded
-Design Loading Memory Usage: 28148 KB (Peak: 28148 KB)
+Design Loading Memory Usage: 27376 KB (Peak: 27376 KB)
 Design Loading CPU Usage: 671 ms
 Simulation completed
-Simulation Memory Usage: 28788 KB (Peak: 28788 KB)
-Simulation CPU Usage: 718 ms
+Simulation Memory Usage: 28024 KB (Peak: 28024 KB)
+Simulation CPU Usage: 686 ms

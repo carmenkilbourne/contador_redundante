@@ -1,14 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/contador_redundante/contador_redundante.srcs/sources_1/new/clk_divider.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'clk_divider'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/contador_redundante/contador_redundante.srcs/sources_1/new/contador1.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'contador1'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/contador_redundante/contador_redundante.srcs/sources_1/new/contador2.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'contador2'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/contador_redundante/contador_redundante.srcs/sources_1/new/display_controller.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'display_controller'
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/contador_redundante/contador_redundante.srcs/sources_1/new/redundancia.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'redundancia'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/contador_redundante/contador_redundante.srcs/sources_1/new/seven_decoder.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'seven_decoder'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/contador_redundante/contador_redundante.srcs/sim_1/new/tb_redundancia.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'tb_redundancia'

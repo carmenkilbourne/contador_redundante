@@ -5,7 +5,6 @@ entity tb_redundancia is
 end tb_redundancia;
 
 architecture Behavioral of tb_redundancia is
-    -- Señales
     signal CLK100MHZ : STD_LOGIC := '0';
     signal RESET : STD_LOGIC := '0';
     signal SW : STD_LOGIC_VECTOR(0 downto 0) := "0";
@@ -31,7 +30,6 @@ architecture Behavioral of tb_redundancia is
     end component;
 
 begin
-    -- Instanciar redundancia
     uut: redundancia
         generic map (SIMULATION_MODE => true)
         port map (
