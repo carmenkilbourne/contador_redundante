@@ -1,0 +1,14 @@
+*.log
+*.jou
+*.str
+*.xpr
+*.xml
+*.wdb
+*.pb
+*.ltx
+*.runs/
+*.cache/
+*.sim/
+webtalk/
+
+*.hw/
